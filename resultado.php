@@ -1,8 +1,7 @@
 <?php
     
-        $consurso = $_GET['consurso'];
-       
-        if($concurso){
+        $consurso = $_GET['concurso'];
+        
             $url =  "https://loteriascaixa-api.herokuapp.com/api/lotofacil/$consurso";
             $data = file_get_contents($url);
             $dataJson = json_decode($data);
@@ -18,9 +17,9 @@
             foreach($dataJson->dezenas as $dezenas){
                 $resultado[] = $dezenas;
             }
-            $dezenas = implode(',',$resultado);   
+            $dezenas = implode(',',$resultado);
+
             echo("Nome: ". $nome . "Concurso: " . $concurso . "Data: " . $dia . "Dezenas: " . $dezenas);
-        
-        }
+     
        
     ?>
