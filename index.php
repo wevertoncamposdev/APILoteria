@@ -14,7 +14,7 @@
     <div class="container">
         <div class="modal">
             <table>
-                <form method="get" action="resulado.php">
+                <form method="get" action="resultado.php">
                     <tr>
                         <td>
                             Valor:
