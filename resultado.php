@@ -35,31 +35,35 @@
     $dezenas = implode(',', $resultado);
 
     ?>
+    <div class="container">
+        <div class="modal">
 
-    <table>
-        <tr>
-            <td><?php echo "Nome:" ?></td>
-            <td><?php echo $nome; ?></td>
-        </tr>
-        <tr>
-            <td><?php echo "Concurso:" ?></td>
-            <td><?php echo $concurso; ?></td>
-        </tr>
-        <tr>
-            <td><?php echo "Data:" ?></td>
-            <td><?php echo $dia; ?></td>
-        </tr>
-        <tr>
-            <td><?php echo "Dezenas:" ?></td>
-            <td><?php echo $dezenas; ?></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <a href="index.php"><input type="submit" value="Voltar"></a>
-            </td>
-        </tr>
-    </table>
+            <table>
+                <tr>
+                    <td><?php echo "Nome:" ?></td>
+                    <td><?php echo $nome; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo "Concurso:" ?></td>
+                    <td><?php echo $concurso; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo "Data:" ?></td>
+                    <td><?php echo $dia; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo "Dezenas:" ?></td>
+                    <td><?php echo $dezenas; ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <a href="index.php"><input type="submit" value="Voltar"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
 
 </body>

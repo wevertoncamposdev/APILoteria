@@ -15,12 +15,8 @@
         <div class="modal">
             <table>
                 <form method="get" action="resultado.php">
-
                     Valor:<input type="number" name="concurso" placeholder="Digite o n° do concurso" required />
-
                     <input type="submit" name="button" value="Consultar" />
-
-
                 </form>
             </table>
         </div>
