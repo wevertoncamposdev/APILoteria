@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,29 @@
     <title>Histórico Lotofacil</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <form method="get" action="resultado.php">
-        Concurso: <input type="number" name="concurso" placeholder="Digite o N° do Concurso" required>
-        <input type="submit" value="Consultar" name="button">
-    </form>
+    <div class="container">
+        <div class="modal">
+            <table>
+                <form method="get" action="resulado.php">
+                    <tr>
+                        <td>
+                            Valor:
+                        </td>
+                        <td>
+                            <input type="number" name="concurso" placeholder="Digite o n° do concurso" required />
+                        </td>
+                        <td>
+                            <input type="submit" name="button" value="Consultar" />
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+    <div>
 
 </body>
+
 </html>

@@ -53,6 +53,12 @@
             <td><?php echo "Dezenas:" ?></td>
             <td><?php echo $dezenas; ?></td>
         </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="index.php"><input type="submit" value="Voltar"></a>
+            </td>
+        </tr>
     </table>
 
 
