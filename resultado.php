@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
 
 <body>
     <?php
-
+    $consurso = $_GET['concurso'];
     $url =  "https://loteriascaixa-api.herokuapp.com/api/lotofacil/$consurso";
     $data = file_get_contents($url);
     $dataJson = json_decode($data);
