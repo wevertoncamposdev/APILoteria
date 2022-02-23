@@ -15,21 +15,16 @@
         <div class="modal">
             <table>
                 <form method="get" action="resultado.php">
-                    <tr>
-                        <td>
-                            Valor:
-                        </td>
-                        <td>
-                            <input type="number" name="concurso" placeholder="Digite o n° do concurso" required />
-                        </td>
-                        <td>
-                            <input type="submit" name="button" value="Consultar" />
-                        </td>
-                    </tr>
+
+                    Valor:<input type="number" name="concurso" placeholder="Digite o n° do concurso" required />
+
+                    <input type="submit" name="button" value="Consultar" />
+
+
                 </form>
             </table>
         </div>
-    <div>
+        <div>
 
 </body>
 
