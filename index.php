@@ -12,6 +12,12 @@
     </title>
 </head>
 <body>
+
+    <form method="get" action="index.php">
+        Concurso: <input type="number" name="concurso" placeholder="Digite o N° do Concurso" required>
+        <input type="submit" value="Concultar" name="button">
+    </form>
+    
     <?php
         $consurso = $_GET['consurso'];
         $url =  "https://loteriascaixa-api.herokuapp.com/api/lotofacil/$consurso";
