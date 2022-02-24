@@ -22,6 +22,29 @@
         </div>
         <div>
 
+            <div class="container">
+                <div class="modal">
+
+                    <?php
+                    //Dados do banco de dados
+                    $user = "b79a82ddcdb5cc";
+                    $password = "61b562df";
+                    $db = "loteria";
+                    $hostname = "us-cdbr-east-05.cleardb.net";
+
+                    //Conectando ao banco de dados
+                    $conn = mysqli_connect($hostname, $user, $password, $db);
+                    if (mysqli_connect($hostname, $user, $password, $db)) {
+                        echo "Banco de dados conectado com sucesso!!\n";
+                    } else {
+                        echo "database connection error\n";
+                    }
+                    ?>
+
+                </div>
+                <div>
+
+
 </body>
 
 </html>
