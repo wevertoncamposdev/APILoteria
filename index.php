@@ -35,9 +35,19 @@
                     //Conectando ao banco de dados
                     $conn = mysqli_connect($hostname, $user, $password, $db);
                     if (mysqli_connect($hostname, $user, $password, $db)) {
-                        echo "Banco de dados conectado com sucesso!\n";
+                        echo "<br>Banco de dados conectado com sucesso!<br>";
                     } else {
-                        echo "database connection error\n";
+                        echo "<br>database connection error<br>";
+                    }
+
+                    $query = "SELECT * FROM heroku_ad279c73e8320b2.lotofacil;";
+                    $dados = mysqli_query($conn, $query);
+                        
+                    while ($line = mysqli_fetch_assoc($dados)){
+                        foreach($line as $key => $value){
+                            //$result[] = explode(',',$value);
+                            echo ("<br>$key: " . "$value");  
+                        }
                     }
                 ?>
 
