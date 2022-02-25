@@ -32,7 +32,13 @@
 
     <div class="container">
         <div class="modal">
+            <?php
 
+                include("botUpdateData.php");
+                verify_bd('mega-sena');
+                verify_bd('lotofacil');
+
+            ?>
         </div>
     </div>
 
