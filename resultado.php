@@ -15,45 +15,27 @@
 </head>
 
 <body>
+
     <?php
 
-    /* $url =  "https://loteriascaixa-api.herokuapp.com/api/lotofacil/$consurso";
-    $data = file_get_contents($url);
-    $dataJson = json_decode($data);
-
-    //Nome
-    $nome = ($dataJson->nome);
-    //Data
-    $dia = ($dataJson->data);
-    //Concurso
-    $concurso = ($dataJson->concurso);
-    //Dezenas
-    $resultado = [];
-    foreach ($dataJson->dezenas as $dezenas) {
-        $resultado[] = $dezenas;
-    }
-    $dezenas = implode(',', $resultado); */
-
+    $loteria = $_GET['loteria'];
     $concurso = $_GET['concurso'];
 
     include('connectDB.php');
 
-    $query = "SELECT * FROM lotofacil WHERE concurso = $concurso ";
+    $query = "SELECT * FROM heroku_ad279c73e8320b2.`$loteria` WHERE concurso = $concurso ";
     $dados = mysqli_query($conn, $query);
 
 
     while ($line = mysqli_fetch_assoc($dados)) {
-      
+
         foreach ($line as $key => $value) {
             //$result[] = explode(',',$value);
-            echo ("<br>". strtoupper($key) . ": " . "$value");
+            echo (strtoupper($key) . ": " . "$value <br>");
         }
     }
-    
-
 
     ?>
-
 
 </body>
 
