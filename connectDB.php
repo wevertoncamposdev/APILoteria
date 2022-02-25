@@ -8,7 +8,7 @@
      //Conectando ao banco de dados
      $conn = mysqli_connect($hostname, $user, $password, $db);
      if (mysqli_connect($hostname, $user, $password, $db)) {
-        echo file_get_contents('script.js');
+        echo "<script>console.log('database successfully connected!')</script>";
      } else {
         echo "database connection error!";
      }

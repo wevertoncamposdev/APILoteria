@@ -16,8 +16,8 @@
 
 <body>
     <?php
-    $consurso = $_GET['concurso'];
-    $url =  "https://loteriascaixa-api.herokuapp.com/api/lotofacil/$consurso";
+
+    /* $url =  "https://loteriascaixa-api.herokuapp.com/api/lotofacil/$consurso";
     $data = file_get_contents($url);
     $dataJson = json_decode($data);
 
@@ -32,38 +32,27 @@
     foreach ($dataJson->dezenas as $dezenas) {
         $resultado[] = $dezenas;
     }
-    $dezenas = implode(',', $resultado);
+    $dezenas = implode(',', $resultado); */
+
+    $concurso = $_GET['concurso'];
+
+    include('connectDB.php');
+
+    $query = "SELECT * FROM lotofacil WHERE concurso = $concurso ";
+    $dados = mysqli_query($conn, $query);
+
+
+    while ($line = mysqli_fetch_assoc($dados)) {
+      
+        foreach ($line as $key => $value) {
+            //$result[] = explode(',',$value);
+            echo ("<br>". strtoupper($key) . ": " . "$value");
+        }
+    }
+    
+
 
     ?>
-    <div class="container">
-        <div class="modal">
-
-            <table>
-                <tr>
-                    <td><?php echo "Nome:" ?></td>
-                    <td><?php echo $nome; ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo "Concurso:" ?></td>
-                    <td><?php echo $concurso; ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo "Data:" ?></td>
-                    <td><?php echo $dia; ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo "Dezenas:" ?></td>
-                    <td><?php echo $dezenas; ?></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <a href="index.php"><input type="submit" value="Voltar"></a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
 
 
 </body>

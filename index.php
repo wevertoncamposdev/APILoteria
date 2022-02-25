@@ -25,23 +25,9 @@
     <div class="container">
         <div class="modal">
 
-            <?php
-
-            include('connectDB.php');
-
-            $query = "SELECT * FROM lotofacil WHERE concurso = 2454";
-            $dados = mysqli_query($conn, $query);
-
-            while ($line = mysqli_fetch_assoc($dados)) {
-                foreach ($line as $key => $value) {
-                    //$result[] = explode(',',$value);
-                    echo ("<br>$key: " . "$value");
-                }
-            }
-            ?>
-
         </div>
     </div>
+
     <!-- <script type="text/javascript" src="script.js"></script>    -->     
     
 </body>
