@@ -34,7 +34,7 @@
         <div class="modal">
             <?php
 
-                include("botUpdateData.php");
+                include("botUpdateDB.php");
                 verify_bd('mega-sena');
                 verify_bd('lotofacil');
 
