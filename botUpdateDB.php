@@ -8,8 +8,9 @@
 
 
 function verify_bd($loteria)
-{
-    include("connectdb.php");
+{      
+
+    include("connectDB.php");
     //Verificando o ultimo concurso
     $urlUpdate = "https://loteriascaixa-api.herokuapp.com/api/$loteria/latest";
     $data = json_decode(file_get_contents($urlUpdate));
@@ -29,7 +30,7 @@ function verify_bd($loteria)
             } else {
                 echo "
                     <form method='post'>
-                
+                    <br>
                     O banco de dados da $loteria está desatualizado! " . " O concurso atual é: " . $concurso . ", e o ultimo concurso do banco de dados é: " . $value . ". 
 
                     <input type='submit' name='atualizar' value='Atualizar'></input>
@@ -54,8 +55,7 @@ function verify_bd($loteria)
 
 function update_database($loteria, $value)
 {
-    echo ("Estamos atualizando o banco de dados... 
-    $loteria: $value <br>");
+    echo ("Atualizando banco de dados...");
 
     
     //Verificando o ultimo concurso
@@ -75,7 +75,7 @@ function update_database($loteria, $value)
     }
     $dezenas = implode(',', $resultado);
 
-    include("connectdb.php");
+    include("connectDB.php");
 
     $query = "INSERT INTO heroku_ad279c73e8320b2.`$loteria` (`concurso`, `nome`, `data`, `resultado`) VALUES (
         '$newConcurso', '$nome', '$dia', '$dezenas'

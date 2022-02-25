@@ -33,9 +33,11 @@
     <div class="container">
         <div class="modal">
             <?php
-
-                include("botUpdateDB.php");
+                
+                include('botUpdateDB.php');
+                echo ("<br>Verificando banco de dados...");
                 verify_bd('mega-sena');
+                echo ("<br>Verificando banco de dados...");
                 verify_bd('lotofacil');
 
             ?>

@@ -26,7 +26,6 @@
     $query = "SELECT * FROM heroku_ad279c73e8320b2.`$loteria` WHERE concurso = $concurso ";
     $dados = mysqli_query($conn, $query);
 
-
     while ($line = mysqli_fetch_assoc($dados)) {
 
         foreach ($line as $key => $value) {
