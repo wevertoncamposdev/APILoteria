@@ -7,7 +7,7 @@
 
 
 
-function verify_bd($loteria)
+function verify_db($loteria)
 {      
 
     include("connectDB.php");
@@ -42,7 +42,7 @@ function verify_bd($loteria)
                     $value = $value + 1;
                     for ($value; $value <= $concurso; $value++) {
 
-                        update_database($loteria, $value);
+                        update_db($loteria, $value);
  
                     }
                 }
@@ -51,9 +51,7 @@ function verify_bd($loteria)
     }
 }
 
-
-
-function update_database($loteria, $value)
+function update_db($loteria, $value)
 {
     echo ("Atualizando banco de dados...");
 

@@ -36,9 +36,9 @@
                 
                 include('botUpdateDB.php');
                 echo ("<br>Verificando banco de dados...");
-                verify_bd('mega-sena');
+                verify_db('mega-sena');
                 echo ("<br>Verificando banco de dados...");
-                verify_bd('lotofacil');
+                verify_db('lotofacil');
 
             ?>
         </div>
