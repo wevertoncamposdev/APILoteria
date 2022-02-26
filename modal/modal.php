@@ -4,13 +4,29 @@
  * Lotofacil = https://loteriascaixa-api.herokuapp.com/api/lotofacil/latest
  * Mega-Sena = https://loteriascaixa-api.herokuapp.com/api/mega-sena/latest
  */
+//conectar ao db
+function connect_db(){
 
+    //Dados do banco de dados
+   $user = "b79a82ddcdb5cc";
+   $password = "61b562df";
+   $db = "heroku_ad279c73e8320b2";
+   $hostname = "us-cdbr-east-05.cleardb.net";
 
+   //Conectando ao banco de dados
+   $conn = mysqli_connect($hostname, $user, $password, $db);
+   if (mysqli_connect($hostname, $user, $password, $db)) {
+      echo "<script>console.log('database successfully connected!')</script>";
+   } else {
+      echo "database connection error!";
+   }
 
-function verify_db($loteria)
-{      
+   return $conn;
+}
+//verificar db
+function verify_db($loteria){      
 
-    include("connectDB.php");
+    //include("connectDB.php");
     //Verificando o ultimo concurso
     $urlUpdate = "https://loteriascaixa-api.herokuapp.com/api/$loteria/latest";
     $data = json_decode(file_get_contents($urlUpdate));
@@ -20,7 +36,7 @@ function verify_db($loteria)
 
     //Verificando o ultimo concurso no banco de dados!
     $query = "SELECT count(concurso) FROM heroku_ad279c73e8320b2.`$loteria`;";
-    $dados = mysqli_query($conn, $query);
+    $dados = mysqli_query(connect_db(), $query);
 
     while ($line = mysqli_fetch_assoc($dados)) {
         foreach ($line as $key => $value) {
@@ -50,9 +66,8 @@ function verify_db($loteria)
         }
     }
 }
-
-function update_db($loteria, $value)
-{
+//atualizar db
+function update_db($loteria, $value){
     echo ("Atualizando banco de dados...");
 
     
@@ -86,4 +101,18 @@ function update_db($loteria, $value)
     }
 
     header('Refresh:1');
+}
+//consultar db
+function consult_db($loteria, $concurso){
+
+    $query = "SELECT * FROM heroku_ad279c73e8320b2.`$loteria` WHERE concurso = $concurso ";
+    $dados = mysqli_query(connect_db(), $query);
+
+    while ($line = mysqli_fetch_assoc($dados)) {
+
+        foreach ($line as $key => $value) {
+            //$result[] = explode(',',$value);
+            echo (strtoupper($key) . ": " . "$value <br>");
+        }
+    }
 }

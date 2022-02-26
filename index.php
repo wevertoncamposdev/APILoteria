@@ -33,18 +33,16 @@
     <div class="container">
         <div class="modal">
             <?php
-                
-                include('botUpdateDB.php');
-                echo ("<br>Verificando banco de dados...");
-                verify_db('mega-sena');
-                echo ("<br>Verificando banco de dados...");
-                verify_db('lotofacil');
+
+            include('modal/modal.php'); 
+            verify_db('mega-sena');
+            verify_db('lotofacil');
 
             ?>
         </div>
     </div>
 
-    <!-- <script type="text/javascript" src="script.js"></script>    -->
+    <!-- <script type="text/javascript" src="js/script.js"></script>    -->
 
 </body>
 

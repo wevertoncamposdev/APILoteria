@@ -17,23 +17,8 @@
 <body>
 
     <?php
-
-    $loteria = $_GET['loteria'];
-    $concurso = $_GET['concurso'];
-
-    include('connectDB.php');
-
-    $query = "SELECT * FROM heroku_ad279c73e8320b2.`$loteria` WHERE concurso = $concurso ";
-    $dados = mysqli_query($conn, $query);
-
-    while ($line = mysqli_fetch_assoc($dados)) {
-
-        foreach ($line as $key => $value) {
-            //$result[] = explode(',',$value);
-            echo (strtoupper($key) . ": " . "$value <br>");
-        }
-    }
-
+        include('modal/modal.php');
+        consult_db($_GET['loteria'], $_GET['concurso']);
     ?>
 
 </body>
