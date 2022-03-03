@@ -29,6 +29,7 @@
             </table>
         </div>
     </div>
+    <hr><br>
 
     <div class="container">
         <div class="modal">
@@ -36,6 +37,16 @@
 
             include('modal/modal.php'); 
             verify_db('mega-sena');
+            
+
+            ?>
+        </div>
+    </div><br><hr><br>
+    <div class="container">
+        <div class="modal">
+            <?php
+
+            //include('modal/modal.php'); 
             verify_db('lotofacil');
 
             ?>

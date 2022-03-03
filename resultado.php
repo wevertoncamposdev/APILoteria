@@ -19,6 +19,9 @@
     <?php
         include('modal/modal.php');
         consult_db($_GET['loteria'], $_GET['concurso']);
+        
+      
+
     ?>
 
 </body>
